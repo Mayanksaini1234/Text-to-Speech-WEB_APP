@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TEXT to SPEECH</title>
+    <link rel="stylesheet" href="/style/main.css">
+</head>
+
+<body>
+    <div class="container">
+        <h1 class="title_h1">
+            TEXT to SPEECH </h1>
+            <div class="form">
+        <form action="/speech"  method="post">
+          
+                <label for="text" class="label">Enter text to convert in voice:</label>
+                <textarea type="text" name="text" id="" class="input" cols="30" rows="10"></textarea>
+               
+                <button type="submit" class="form-submit">Go</button>
+    
+            </div>
+        </form>
+       <div class="cards">
+        <% if (locals.data){ %>
+        <audio controls>
+            <source src="audio/output.mp3" type="audio/mpeg">
+            Your browser does not support the audio element.
+        </audio>
+        <% } %>
+        </div>
+</body>
+
+</html>
